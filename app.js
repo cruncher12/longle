@@ -9,7 +9,7 @@ App = async ()=>{
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "random-words5.p.rapidapi.com",
-                "x-rapidapi-key": "ed2ee44e46msh04d7678aac070dcp125e81jsn5b4ee8961b0f"
+                "x-rapidapi-key": "INSERT_YOURS"
             }
         })
 
