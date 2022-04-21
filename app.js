@@ -15,6 +15,7 @@ App = async ()=>{
 
         response = await response.json()
         console.log(response)
+        wordlist = response
         word = response[Math.floor(Math.random()*5)].toUpperCase()
 
     let activeGame = true
