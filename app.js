@@ -145,7 +145,7 @@ App = async ()=>{
         currentTile = activeGame ? 0 : 5
         currentRow = currentRow+1
 
-        if (currentRow == 6 && !activeGame)
+        if (!activeGame)
             showPopUp(`The word is ${word}`)
 
     }
