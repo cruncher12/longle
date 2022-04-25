@@ -5,13 +5,7 @@ App = async ()=>{
 
     let word = "TRACK";
 
-        let response  = await fetch("https://random-words5.p.rapidapi.com/getMultipleRandom?count=5&wordLength=5", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "random-words5.p.rapidapi.com",
-                "x-rapidapi-key": "9dd50fa6cemsh0db178e7701adaep1f798ejsn0c69b0aa0056"
-            }
-        })
+        let response  = await fetch("https://random-word-api.herokuapp.com/word?number=5&length=5")
 
         response = await response.json()
         console.log(response)
