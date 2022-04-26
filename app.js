@@ -85,15 +85,10 @@ App = async ()=>{
     guessMade = async () =>{
 
         //later: check if the word entered is a real word
-        let response = await fetch(`https://twinword-word-graph-dictionary.p.rapidapi.com/definition/?entry=${currentGuess}`, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "twinword-word-graph-dictionary.p.rapidapi.com",
-                "x-rapidapi-key": "ed2ee44e46msh04d7678aac070dcp125e81jsn5b4ee8961b0f"
-            }
-        })
+        let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${currentGuess}`)
+
         response = await response.json()
-        const isWordFake = (response.result_msg == 'Entry word not found')
+        const isWordFake = (response.result_msg == `No Definitions Found`)
         
         if (isWordFake){
             showPopUp("Not a real word")
