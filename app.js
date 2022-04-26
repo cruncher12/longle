@@ -5,7 +5,7 @@ App = async ()=>{
 
     let word = "TRACK";
 
-        let response  = await fetch("https://random-word-api.herokuapp.com/word?number=5&length=5")
+        let response  = await fetch("https://random-word-api.herokuapp.com/word?number=5&length=10")
 
         response = await response.json()
         console.log(response)
@@ -17,12 +17,12 @@ App = async ()=>{
     const keys = "Q.W.E.R.T.Y.U.I.O.P.A.S.D.F.G.H.J.K.L.ENTER.Z.X.C.V.B.N.M.BACK".split(".")
 
     const tileRows = [
-        ["", "", "", "", ""],
-        ["", "", "", "", ""],
-        ["", "", "", "", ""],
-        ["", "", "", "", ""],
-        ["", "", "", "", ""],
-        ["", "", "", "", ""]
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""]
     ]
 
     const congratulations = ["Genius!", "Amazing!", "Impressive!", "Nicely Done!", "You got it!", "Phew!"]
@@ -69,8 +69,8 @@ App = async ()=>{
 
         else if (key === "ENTER"){
 
-            if (currentGuess.length < 5){
-                showPopUp("Guess must be 5 letters long")
+            if (currentGuess.length < 10){
+                showPopUp("Guess must be 10 letters long")
                 return;
             }
 
@@ -97,7 +97,7 @@ App = async ()=>{
 
         const checked = new Map([])
 
-        for (let index = 0 ; index < 5 ; index++){
+        for (let index = 0 ; index < 10 ; index++){
 
             const tile = document.getElementById('guessRow-'+currentRow+"-tile-"+index)
             const curKey = document.getElementById(tile.innerText)
@@ -131,7 +131,7 @@ App = async ()=>{
 
         //reset guessed word, tile index and increment row index
         currentGuess = ""
-        currentTile = activeGame ? 0 : 5
+        currentTile = activeGame ? 0 : 10
         currentRow = currentRow+1
         if (currentRow == 6){
             if (currentGuess !== word){
