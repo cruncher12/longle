@@ -10,19 +10,19 @@ App = async ()=>{
         response = await response.json()
         console.log(response)
         wordlist = response
-        word = response[Math.floor(Math.random()*10)].toUpperCase()
+        word = response[Math.floor(Math.random()*5)].toUpperCase()
 
     let activeGame = true
 
     const keys = "Q.W.E.R.T.Y.U.I.O.P.A.S.D.F.G.H.J.K.L.ENTER.Z.X.C.V.B.N.M.BACK".split(".")
 
     const tileRows = [
-        ["", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", ""]
+        ["", "", "", "", ""],
+        ["", "", "", "", ""],
+        ["", "", "", "", ""],
+        ["", "", "", "", ""],
+        ["", "", "", "", ""],
+        ["", "", "", "", ""]
     ]
 
     const congratulations = ["Genius!", "Amazing!", "Impressive!", "Nicely Done!", "You got it!", "Phew!"]
@@ -44,7 +44,7 @@ App = async ()=>{
 
         if (key.length == 1){
 
-            if (currentTile < 5){
+            if (currentTile < 10){
 
                 const tile = document.getElementById('guessRow-'+currentRow+"-tile-"+currentTile)
                 tile.innerText = key;
@@ -97,7 +97,7 @@ App = async ()=>{
 
         const checked = new Map([])
 
-        for (let index = 0 ; index < 10 ; index++){
+        for (let index = 0 ; index < 5 ; index++){
 
             const tile = document.getElementById('guessRow-'+currentRow+"-tile-"+index)
             const curKey = document.getElementById(tile.innerText)
@@ -133,7 +133,7 @@ App = async ()=>{
         currentGuess = ""
         currentTile = activeGame ? 0 : 5
         currentRow = currentRow+1
-        if (currentRow == 6){
+        if (currentRow == 10){
             if (currentGuess !== word){
                 activeGame =  false;
             }
