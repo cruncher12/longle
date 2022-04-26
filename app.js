@@ -10,7 +10,7 @@ App = async ()=>{
         response = await response.json()
         console.log(response)
         wordlist = response
-        word = response[Math.floor(Math.random()*5)].toUpperCase()
+        word = response[Math.floor(Math.random()*10)].toUpperCase()
 
     let activeGame = true
 
@@ -131,7 +131,7 @@ App = async ()=>{
 
         //reset guessed word, tile index and increment row index
         currentGuess = ""
-        currentTile = activeGame ? 0 : 10
+        currentTile = activeGame ? 0 : 5
         currentRow = currentRow+1
         if (currentRow == 6){
             if (currentGuess !== word){
