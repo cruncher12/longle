@@ -10,7 +10,7 @@ App = async ()=>{
         response = await response.json()
         console.log(response)
         wordlist = response
-        word = response[Math.floor(Math.random()*5)].toUpperCase()
+        word = response[Math.floor(Math.random()*10)].toUpperCase()
 
     let activeGame = true
 
@@ -97,7 +97,7 @@ App = async ()=>{
 
         const checked = new Map([])
 
-        for (let index = 0 ; index < 5 ; index++){
+        for (let index = 0 ; index < 10 ; index++){
 
             const tile = document.getElementById('guessRow-'+currentRow+"-tile-"+index)
             const curKey = document.getElementById(tile.innerText)
